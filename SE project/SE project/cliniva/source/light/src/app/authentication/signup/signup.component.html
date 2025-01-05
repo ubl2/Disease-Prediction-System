@@ -1,0 +1,109 @@
+<!-- Design for signup  -->
+<div class="limiter">
+  <div class="container-login100" style="background-image: url('assets/images/health.jpg');">
+    <div class="wrap-login100">
+      <form class="login100-form validate-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <span class="login100-form-title p-b-30">
+          Register
+        </span>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username" required>
+          <mat-icon matSuffix>face</mat-icon>
+          <mat-error *ngIf="loginForm.get('username').hasError('required')">
+            Username is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" required>
+          <mat-icon matSuffix>mail</mat-icon>
+          <mat-error *ngIf="loginForm.get('email').hasError('required') || loginForm.get('email').touched">
+            Please enter a valid email address
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Age</mat-label>
+          <input matInput formControlName="age" required>
+          <mat-icon matSuffix>mail</mat-icon>
+          <mat-error *ngIf="loginForm.get('age').hasError('required')">
+            Age is required
+          </mat-error>
+        </mat-form-field>    
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Phone Number</mat-label>
+          <input matInput formControlName="phone" required>
+          <!-- <mat-icon matSuffix>mail</mat-icon> -->
+          <mat-error *ngIf="loginForm.get('phone').hasError('required') ">
+            Phone number is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>DOB</mat-label>
+          <input formControlName="dob" matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="loginForm.get('dob').hasError('required')">
+            DOB is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>User Type</mat-label>
+          <select formControlName="userType" matNativeControl >
+            <option value="1">Doctor</option>
+            <option value="2">Patient</option>
+          </select>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" required>
+          <mat-icon matSuffix (click)="hide = !hide">
+            {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <mat-error *ngIf="loginForm.get('password').hasError('required')">
+            Password is required
+          </mat-error>
+        </mat-form-field>
+
+        <!-- <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput formControlName="cpassword" [type]="chide ? 'password' : 'text'" required>
+          <mat-icon matSuffix (click)="chide = !chide">
+            {{chide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <mat-error *ngIf="loginForm.get('cpassword').hasError('required')">
+            Confirm Password is required
+          </mat-error>
+        </mat-form-field> -->
+
+        
+
+        <div class="flex-sb-m w-full p-t-15 p-b-20">
+          <div>
+            <span>Already Registered? <a routerLink="/">
+                Login
+              </a></span>
+          </div>
+        </div>
+        <div class="container-login100-form-btn">
+          <button class="login100-form-btn" type="submit">
+            Register
+          </button>
+        </div>
+        <div class="text-center p-t-30 p-b-20">
+          <span class="txt2">
+            <!-- or sign up using -->
+          </span>
+        </div>
+        <!-- <div class="login100-form-social flex-c-m">
+          <a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div> -->
+      </form>
+      <div class="login100-more" >
+      </div>
+    </div>
+  </div>
+</div>

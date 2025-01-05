@@ -1,0 +1,9 @@
+<div *ngIf="showLoadingIndicatior" class="page-loader-wrapper">
+    <app-page-loader></app-page-loader>
+</div>
+<app-header *ngIf="!_router.url.includes('/authentication')"></app-header>
+<app-sidebar *ngIf="_router.url.includes('dashboard/main') || _router.url.includes('dashboard/pat-feedback') || _router.url.includes('dashboard/insurance') "></app-sidebar>
+<app-doc-sidebar *ngIf="_router.url.includes('/dashboard/doc-home') || _router.url.includes('dashboard/doc-feedback')"  ></app-doc-sidebar>
+<app-admin-sidebar *ngIf="_router.url.includes('/dashboard/admin-home') || _router.url.includes('dashboard/admin-feedback') ||  _router.url.includes('dashboard/admin-diseases') ||  _router.url.includes('dashboard/admin-symptoms') || _router.url.includes('/dashboard/admin-patient') "  > </app-admin-sidebar>
+<app-right-sidebar></app-right-sidebar>
+<router-outlet></router-outlet>

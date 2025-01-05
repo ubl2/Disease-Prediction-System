@@ -1,0 +1,45 @@
+ <!-- div for login screen -->
+
+<div class="limiter">
+    <div class="container-login100">
+      <div class="wrap-login100">
+        <form class="login100-form validate-form" [formGroup]="loginForm" >
+          <span class="login100-form-title pb-5">
+            Doctor Login
+          </span>
+          <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="username" />
+                <mat-icon matSuffix>face</mat-icon>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-12col-lg-12 col-md-12 col-sm-12 mb-2">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password">
+                <mat-icon matSuffix>vpn_key</mat-icon>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="container-login100-form-btn">
+            <button class="login100-form-btn" (click)="onSubmit()">
+              Login
+            </button>
+          </div>
+          <div class="text-center p-t-30 p-b-20">
+            <span class="txt3">
+              <a routerLink="/authentication/signup">
+                sign up
+              </a> 
+            </span>
+          </div>
+        </form>
+        <div class="login100-more" style="background-image: url('assets/images/bg-doc.png');">
+        </div>
+      </div>
+    </div>
+  </div>

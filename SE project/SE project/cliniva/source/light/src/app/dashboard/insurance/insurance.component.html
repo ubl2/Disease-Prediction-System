@@ -1,0 +1,144 @@
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <!-- <h4 class="page-title">Dashboard</h4> -->
+                        </li>
+                        <li class="breadcrumb-item bcrumb-1">
+                            <a routerLink="/dashboard/main">
+                                <i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="breadcrumb-item active">Insurance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- #END# Widgets -->
+        <div class="row clearfix">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="header">
+                        <!-- <h2>
+                            Enter Symptoms</h2> -->
+                    </div>
+                    <div class="tableBody">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            Age
+                                        </td>
+                                        <td>
+                                            <mat-form-field class="example-full-width" appearance="outline">
+                                                <input matInput [formControl]="age">
+                                            </mat-form-field>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Sex
+                                        </td>
+                                        <td>
+                                            <mat-radio-group aria-label="Select an option" [formControl]="sex" >
+                                                <mat-radio-button value="male">Male</mat-radio-button>
+                                                <mat-radio-button value="female">Female</mat-radio-button>
+                                            </mat-radio-group>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            BMI
+                                        </td>
+                                        <td>
+                                            <mat-form-field class="example-full-width" appearance="outline">
+                                                <input matInput [formControl]="bmi" >
+                                            </mat-form-field>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Childern
+                                        </td>
+                                        <td>
+                                            <mat-radio-group aria-label="Select an option" [formControl]="childern" >
+                                                <mat-radio-button value="1">1</mat-radio-button>
+                                                <mat-radio-button value="2">2</mat-radio-button>
+                                                <mat-radio-button value="3">3</mat-radio-button>
+                                                <mat-radio-button value="4">4</mat-radio-button>
+                                                <mat-radio-button value="5">5</mat-radio-button>
+                                            </mat-radio-group>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Smoker
+                                        </td>
+                                        <td>
+                                            <mat-radio-group aria-label="Select an option" [formControl]="smoker" >
+                                                <mat-radio-button value="yes">Yes</mat-radio-button>
+                                                <mat-radio-button value="no">No</mat-radio-button>
+                                            </mat-radio-group>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Region
+                                        </td>
+                                        <td>
+                                            <mat-form-field class="example-full-width" appearance="outline">
+
+                                                <select matNativeControl required [formControl]="region" >
+                                                    <option value=""></option>
+                                                    <option value="southeast">southeast</option>
+                                                    <option value="southwest">southwest</option>
+                                                    <option value="northeast">northeast</option>
+                                                    <option value="northwest">northwest</option>
+                                                </select>
+                                            </mat-form-field>
+                                        </td>
+                                    </tr>
+
+                                    <tr *ngIf="total " >
+                                        <td>
+                                            Total 
+                                        </td>
+                                        <td>
+                                            {{total}}
+                                        </td>
+                                    </tr>
+
+                                    <tr *ngIf="class ">
+                                        <td>
+                                            Class
+                                        </td>
+                                        <td>
+                                            {{class}}
+                                        </td>
+                                    </tr>
+                                    
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="login100-form-btn" style="width: 200px;margin: auto auto 15px auto;" (click)="submit()" >
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

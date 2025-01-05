@@ -1,0 +1,67 @@
+<!-- Screen to view and edit symptoms -->
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <!-- <h4 class="page-title">Dashboard</h4> -->
+                        </li>
+                        <li class="breadcrumb-item bcrumb-1">
+                            <a routerLink="/dashboard/main">
+                                <i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="breadcrumb-item active">Manage Symptom</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row clearfix">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="header">
+                        <div style="font-size: 25px;cursor: pointer;" >
+                            <button class="login100-form-btn pull-right" (click)="openPatientDialog(null)"
+                                style="width: 200px;margin: auto auto 15px auto;">
+                                Add Symptom
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tableBody">
+                        <div class="table-responsive">
+                            <table class="table table-hover ">
+                                <thead>
+                                    <tr>
+
+                                        <th>Symptom</th>
+                                        
+                                        <th>
+                                            Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr  *ngFor="let item of data">
+                                        <td>{{item.symptom_name}}</td>
+                                        <td class="row">
+                                            <span class="material-icons cal" title="Edit" style="cursor: pointer;" (click)="openPatientDialog(item)" >
+                                                edit
+                                            </span>
+                                            <span class="material-icons " title="Delete"  style="color: red;cursor: pointer;" (click)="delSym(item.symptom_id)" >
+                                                delete
+                                            </span>
+                                        </td>
+                                    </tr>
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,139 @@
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <!-- <h4 class="page-title">Dashboard</h4> -->
+                        </li>
+                        <li class="breadcrumb-item bcrumb-1">
+                            <a routerLink="/dashboard/main">
+                                <i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="breadcrumb-item active">Dieasese Prediction</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- #END# Widgets -->
+        <div *ngIf="logintype ==  1" class="row clearfix">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            Enter Symptoms</h2>
+                    </div>
+                    <div class="tableBody">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+
+                                        <td>Symptom 1</td>
+                                        <td style="padding-top: 25px !important;">
+                                            <mat-form-field class="example-full-width" appearance="outline">
+                                                <select matNativeControl [formControl]="symtom1" >
+                                                    <option value=""></option>
+                                                    <option *ngFor="let item of data" [value]="item.symptom_name">{{item.symptom_name}}</option>
+                                                </select>
+                                            </mat-form-field>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>Symptom 2</td>
+                                        <td style="padding-top: 25px !important;">
+                                            <mat-form-field class="example-full-width" appearance="outline">
+                                                <select matNativeControl [formControl]="symtom2" >
+                                                    <option value=""></option>
+                                                    <option *ngFor="let item of data" [value]="item.symptom_name">{{item.symptom_name}}</option>
+                                                </select>
+                                            </mat-form-field>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>Symptom 3</td>
+                                        <td style="padding-top: 25px !important;">
+                                            <mat-form-field class="example-full-width" appearance="outline">
+                                                <select matNativeControl [formControl]="symtom3" >
+                                                    <option value=""></option>
+                                                    <option *ngFor="let item of data" [value]="item.symptom_name">{{item.symptom_name}}</option>
+                                                </select>
+                                            </mat-form-field>
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="login100-form-btn" (click)="submit()"
+                            style="width: 200px;margin: auto auto 15px auto;">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="logintype ==  2" class="row clearfix">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="header">
+                        <div style="font-size: 25px;cursor: pointer;" (click)="back()">
+                            <span class="material-icons" style="font-size: 23px;">
+                                keyboard_arrow_left
+                            </span>
+                            Back
+                        </div>
+
+                    </div>
+                    <div class="tableBody">
+                        <div class="table-responsive">
+                            <table class="table table-hover ">
+                                <thead>
+                                    <tr>
+
+                                        <th>Pridected Disease</th>
+                                        <th>Percentage</th>
+                                        <th>Precaution</th>
+                                        <th>
+                                            Doctor
+                                        </th>
+                                        <th>
+                                            Appointment
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of prediction" >
+                                        <td>
+                                            <div class="badge col-red">{{item.diease}}</div>
+                                        </td>
+                                        <td>{{item.value}}%</td>
+                                        <td>
+                                            {{item.precaution}}
+                                        </td>
+                                        <td>{{item.doc_name}}</td>
+                                        <td class="row">
+                                            <span class="material-icons cal" (click)="openCalenderDialog(item.doc_id)" >
+                                                event
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
